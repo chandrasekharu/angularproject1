@@ -14,7 +14,27 @@ import { Router} from '@angular/router';
    
 })
 export class HeroesComponent implements OnInit {
-  
+
+
+    delete(hero: Hero): void {
+        this.heroService
+            .delete(hero.id)
+            .then(() => {
+                this.heroes = this.heroes.filter(h => h !== hero);
+                if (this.selectedHero === hero) { this.selectedHero = null; }
+            });
+    }
+
+    add(name: string): void {
+        name = name.trim();
+        if (!name) { return; }
+        this.heroService.create(name)
+            .then(hero => {
+                this.heroes.push(hero);
+                this.selectedHero = null;
+            });
+    }
+    
     heroes : Hero[];
     selectedHero: Hero;
 

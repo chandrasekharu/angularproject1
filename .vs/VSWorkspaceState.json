@@ -5,6 +5,6 @@
     "\\my-app\\src",
     "\\my-app\\src\\app"
   ],
-  "SelectedNode": "\\my-app\\src\\app\\app.module.ts",
+  "SelectedNode": "\\my-app\\src\\app\\hero-search.component.ts",
   "PreviewInSolutionExplorer": false
 }
